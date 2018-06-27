@@ -4,6 +4,20 @@ description: API Document123
 
 # API Document for Developer
 
+{% tabs %}
+{% tab title="First Tab" %}
+
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+|  |  |
+| --- | --- |
+|  |  |
+
 {% api-method method="get" host="https://api.cakes.com" path="/v1/cakes/:id" %}
 {% api-method-summary %}
 Get Cakes
