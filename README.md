@@ -320,7 +320,7 @@ Updates state of a command.
 | `Progress` | number | optional | Progress of the command processing. Only used if the `State` is `Processing`, otherwise ignored. |
 | `Notes` | string | optional | Notes about command execution. Only used if the `State` is `Processed`, `Cancelled` or `Error`, otherwise ignored. |
 
-#### Response
+#### Responsesesss
 
 ```javascript
 {}
