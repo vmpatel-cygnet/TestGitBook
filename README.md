@@ -2,7 +2,7 @@
 description: My new gitbook app
 ---
 
-# Initial page 1
+# API Document for Developer
 
 Change from Github
 

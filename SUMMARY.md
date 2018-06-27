@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Initial page 1](README.md)
+* [API Document for Developer](README.md)
 
