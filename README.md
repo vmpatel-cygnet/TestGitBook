@@ -10,21 +10,11 @@ description: API Document123456
 
 Returns all devices in the enterprise.
 
-#### Request
+#### Parameters
 
-`[PlatformAddress]/api/connector/v1/devices/getAll`
-
-```javascript
-{
-    "ClientToken": "E0D439EE522F44368DC78E1BFB03710C-D24FB11DBE31D4621C4817E028D9E1D",
-    "AccessToken": "C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D"
-}
-```
-
-| Property | Type |  | Description |
+|   perPage | The number of events to get in a single api call. | Must be an integer greater than 0 |
 | --- | --- | --- | --- |
-| `ClientToken` | string | required | Token identifying the client application. |
-| `AccessToken` | string | required | Access token of the client application. |
+|   start | The starting result of the page. Note this is zero based \(i.e. sending start=0 will start from the first result.\) Must | Must be an integer 0 or greater |
 
 #### Response
 
