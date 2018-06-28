@@ -67,13 +67,13 @@ Revision History
 | 26/Apr/2018  | \- Added modifiedDate in getEventList API,                                                                                                                                                                                                       | *getEventList*                                                                                                                                                                                                                                     |
 | 9/May/2018   | \- Removed “salesPriceTax” property from addItemsToBooking request - Updated descriptions for addItemsToBooking request                                                                                                                          | [addItemsToBooking](#additemstobooking)                                                                                                                                                                                                            |
 | 01/June/2018 | \- Added daily revenue data to getBooking - Added the fee details to “payments” section of getInvoice - Added actions “getRegistration”, “getRegistrationList”, “getAttendee”, and “getAttendeeList” to event namespace                          | [getBooking](#getvenueroomlist) [getInvoice](#getinvoice) [getRegistration](#getregistration) [getRegistrationList](#getregistrationlist) [getAttendee](#getattendee) [getAttendeeList](#getattendeelist)                                          |
-| 01/June/2018 | \- Add following endpoints to event namespace getPollList                                                                                                                                                                                        | *getPollList getPoll addResponse getDiscussionList addDiscussion addQuestion*                                                                                                                                                                      |
+| 01/June/2018 | \- Add following endpoints to event namespace getPollList                                                                                                                                                                                        | [getPollList](#getpolllist) [getPoll](#getpoll) [addResponse](#addresponse) [getDiscussionList](#getdiscussionlist) [addDiscussion](#adddiscussion) [addQuestion](#addquestion)                                                                    |
 |              | getPoll                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                    |
 |              | addResponse                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                    |
 |              | getDiscussionList                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                    |
 |              | addDiscussion                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                    |
 |              | addQuestion                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                    |
-| 05/June/2018 | Add following endpoints: addOrUpdateLead addOrUpdateOpportunity convertLeadToOpportunity                                                                                                                                                         | *addOrUpdateLead addOrUpdateOpportunity convertLeadToOpportunity*                                                                                                                                                                                  |
+| 05/June/2018 | Add following endpoints: addOrUpdateLead addOrUpdateOpportunity convertLeadToOpportunity                                                                                                                                                         | *addOrUpdateLead* [addOrUpdateOpportunity](#addorupdateopportunity) [convertLeadToOpportunity](#convertleadtoopportunity)                                                                                                                          |
 
 -   Now returns the inviceLinkYes, inviteLinkNo and response in the
     eventInvitations object
@@ -2015,8 +2015,9 @@ A collection object with the following properties in the results
 | id       | The unique identifier of the session              |   |   |   |   |
 | name     | The name of the session                           |   |   |   |   |
 
-The result from this call will be a collection of all the event polls the user
-has access to. This call also accepts the pagination and filter properties.
+The result from this call will be a [collection](#collections) of all the event
+polls the user has access to. This call also accepts the
+[pagination](#pagination) and [filter](#filtering) properties.
 
 Throws
 
@@ -2873,7 +2874,7 @@ One of the following values:
 |--------------------|-------------------------|--------------------------------------------|
 | modifiedDateAfter  | Filter by Modified Date | [iVvy Timestamp Format](#timestamp-format) |
 
-**Additional Filter Properties**
+**Additional** [Filter](#filtering) **Properties**
 
 | companyId | Filter by unique id of company | integer |
 |-----------|--------------------------------|---------|
