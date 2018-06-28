@@ -12,9 +12,9 @@ Returns all devices in the enterprise.
 
 #### Parameters
 
-|   perPage | The number of events to get in a single api call. | Must be an integer greater than 0 |
-| --- | --- | --- | --- |
-|   start | The starting result of the page. Note this is zero based \(i.e. sending start=0 will start from the first result.\) Must | Must be an integer 0 or greater |
+| perPage | The number of events to get in a single api call. | Must be an integer greater than 0 |
+| --- | --- | --- |
+| start | The starting result of the page. Note this is zero based \(i.e. sending start=0 will start from the first result.\)  | Must be an integer 0 or greater |
 
 #### Response
 
