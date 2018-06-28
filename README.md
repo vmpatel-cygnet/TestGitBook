@@ -338,21 +338,20 @@ The additional messages will contain the messages from the validator as to why t
 
 **Request \(contact?action=getContact\):**
 
-> {"id":"wrong"}
+```javascript
+{"id":"wrong"}
+```
 
 **Response:**
 
-> {
->
-> "errorCode":400,
->
-> "message":"'id' does not validate",
->
-> "specificCode":23016,
->
-> "additionalMessages":\["Value must be a whole number"\]
->
-> }
+```javascript
+{
+"errorCode":400,
+"message":"'id' does not validate",
+"specificCode":23016,
+"additionalMessages":["Value must be a whole number"]
+}
+```
 
 **Exception: Specific Code 23017**
 
@@ -366,7 +365,9 @@ A required parameter was missing from the request.
 
 **Response:**
 
-> {"errorCode":400,"message":"'id' is required","specificCode":23017}
+```javascript
+{"errorCode":400,"message":"'id' is required","specificCode":23017}
+```
 
 #### Response Headers
 
