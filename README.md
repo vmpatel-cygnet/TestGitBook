@@ -406,3 +406,113 @@ i.e.
 
 Each action may require some extra parameters as part of the call. These are provided in the BODY of the request as a JSON encoded object. The specifics for each call are outlined in this document.
 
+Batch Namespace (batch)
+-----------------------
+
+As a way of providing asynchronous access to iVvy’s API, there is a namespace
+added for batch requests. This also provides a way to run multiple api calls in
+a batch and provide the result of all the api calls via a URL callback.
+
+### run
+
+**Parameters**
+
+| jobs        | Array of api jobs to be run on the api. Each job needs to have the following keys:                   | Required |
+|-------------|------------------------------------------------------------------------------------------------------|----------|
+| callbackUrl | The URL to hit with a POST request after the batch has been run, with a JSON object of the responses | Required |
+
+-   namespace
+
+-   action
+
+-   params
+
+**Returns**
+
+| asyncId | Identifier for the batch request |
+|---------|----------------------------------|
+
+
+**Throws**
+
+| Specific Code: 24092 | Incorrect Job Format          |
+|----------------------|-------------------------------|
+| Specific Code: 24093 | Empty job parameter found     |
+| Specific Code: 24091 | The information was not saved |
+
+The run action takes an array of api calls and returns an identifier that can be
+used to identify the batch. Keep this identifier as it can be used to identify
+the response of the batch request, as well as being used to fetch the progress
+and results of the request.
+
+To run a batch job, an JSON object must be provided with the following keys:
+
+-   jobs: An array of jobs, each element being an object with the following keys
+
+    -   namespace: The namespace of the api call
+
+    -   action: The api call to make
+
+    -   params: Any parameters required for the api call
+
+-   callbackUrl: A URL that will be called after the batch has completed.
+
+    -   The request will be a POST request
+
+    -   The response will be a JSON object with the following keys
+
+        -   asyncId: The async identifier provided when the batch was created
+
+        -   results: An array of objects for each result of the batch, with the
+            following keys
+
+            -   namespace: The namespace of the call for the response
+
+            -   action: The action of of the call for the response
+
+            -   request: The original request parameters used
+
+            -   response: The response of the api call
+
+#### Example: Run a batch job inviting some contacts to different events
+
+**Request:**
+
+>   {"jobs":[{"namespace":"event",”action:"inviteContacts","params":{"event":1,"contacts":[1,2,3]}},{"namespace":"event",”action:"inviteContacts","params":{"event":2,"contacts":[1,2,4]}},],"callbackUrl":"<http://example.callback.url.com>"}
+
+**Response:**
+
+>   {"asyncId":"e35e06ee592d17a42dc9e6252a058617"}
+
+### progress
+
+**Parameters**
+
+| async | The asyncId for the batch job to check progress for | Required |
+|-------|-----------------------------------------------------|----------|
+
+
+**Returns**
+
+| progress | The progress of the batch job, as a percentage of work completed. |
+|----------|-------------------------------------------------------------------|
+
+
+**Throws**
+
+| Specific Code: 24105 | Could not find batch |
+|----------------------|----------------------|
+
+
+The progress action takes the asyncId as a parameter and returns back the
+progress of the batch job as a percentage
+
+#### Example: Fetch the progress of a batch job
+
+**Request:**
+
+>   {"async":"a7ec88af7d710bf51b188004bb532d77"}
+
+**Response:**
+
+>   {"progress":33}
