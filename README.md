@@ -20,7 +20,7 @@ title: iVvy API
 | **Date** | **Change** | **Reference Section\(s\)** |
 | --- | --- | --- |
 | 01/May/2015 | Initial document created |  |
-| 04/May/2015 | Added the inviteContacts api call to the event namespace | [inviteContacts](./#_jggqll6qze1v) |
+| 04/May/2015 | Added the inviteContacts api call to the event namespace | [`inviteContacts`](events.md) |
 | 05/May/2015 | Added the contact namespace | [contact](./#contact-namespace-contact) |
 | 06/May/2015 | Added more options to the add/update contact | [addOrUpdateContact](./#_fy3x7ub206sd) |
 | 07/May/2015 | Added the getSponsorshipList api call | [getSponsorshipList](./#_bqpu6t8zpppt) |
